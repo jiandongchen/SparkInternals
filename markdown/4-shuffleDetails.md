@@ -84,7 +84,7 @@ MapReduce 可以在 process 函数里面可以定义任何数据结构，也可�
 
 ![shuffle-reduce](PNGfigures/reduceByKeyRecord.png)
 
-可以看到，fetch 来的 records 被逐个 aggreagte 到 HashMap 中，等到所有 records 都进入 HashMap，就得到最后的处理结果。唯一要求是 func 必须是 commulative 的（参见上面的 Spark 的 reduce() 的代码）。
+可以看到，fetch 来的 records 被逐个 aggregate 到 HashMap 中，等到所有 records 都进入 HashMap，就得到最后的处理结果。唯一要求是 func 必须是 commulative 的（参见上面的 Spark 的 reduce() 的代码）。
 
 ShuffledRDD 到 MapPartitionsRDD 使用的是 mapPartitionsWithContext 操作。
 
